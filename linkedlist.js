@@ -64,11 +64,26 @@ class linkedList {
         return count;
     }
 
-    getHead() {
+    head() {
         return this.head;
     }
 
-    getTail() {
+    tail() {
         return this.tail;
+    }
+
+    at(index) {
+        if (index < 0) return null;
+
+        let currentNode = this.head;
+        let currentIndex = 0;
+
+        while (currentNode) {
+            if (currentIndex === index) return currentNode;
+
+            currentNode = currentNode.nextNode;
+            currentIndex++;
+        }
+        return null;
     }
 }
